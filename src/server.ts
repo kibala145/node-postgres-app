@@ -3,6 +3,7 @@ import bodyParser from 'body-parser'
 import productsRouter from './routers/ProductsRouter'
 import errorMiddleware from './middlewares/error'
 import pool from './dbconfig/dbconnector'
+import cors from 'cors'
 
 class Server {
   private app
@@ -24,6 +25,7 @@ class Server {
     app.use(bodyParser.urlencoded({ extended: true }))
     app.use(bodyParser.json())
     app.use(errorMiddleware)
+    app.use(cors())
   }
 
   private async dbConnect () {
