@@ -1,9 +1,12 @@
 import { Pool } from 'pg'
+require('dotenv').config()
+
+const { DATABASE_URL } = process.env
 
 const pool = new Pool({
   max: 20,
   // connectionString: 'postgres://root:newPassword@localhost:port/dbname',
-  connectionString: 'postgres://postgres:crwjK3Zw@localhost:5432/postgres',
+  connectionString: DATABASE_URL,
   idleTimeoutMillis: 30000
 })
 
