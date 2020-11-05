@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc --project ./",
     "start": "nodemon ./src/app.ts",
-    "start:docker": "docker-compose up --build -d"
+    "start:docker": "docker-compose up --build -d",
+    "stop:docker": "docker-compose stop"
   },
   "author": "",
   "license": "ISC",
